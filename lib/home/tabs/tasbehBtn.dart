@@ -10,14 +10,14 @@ class Tasbehbtn extends StatelessWidget {
     return Container(
       child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            backgroundColor: Color.fromARGB(255, 183, 147, 95),
+            backgroundColor: Theme.of(context).colorScheme.tertiary,
           ),
           onPressed: () {
             onclick();
           },
           child: Text(
             tasbeh,
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
           )),
     );
   }

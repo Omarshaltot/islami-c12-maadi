@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:islami_c12_maadi/home/tabs/tasbehBtn.dart';
 
 class SebhaTab extends StatefulWidget {
-  SebhaTab({super.key});
+  const SebhaTab({super.key});
 
   @override
   State<SebhaTab> createState() {
@@ -16,6 +16,9 @@ class Sebhatabastate extends State<SebhaTab> {
   static int counts = 0;
   static double num = 0;
 
+  bool isDark = false; // Define the isDark variable
+
+  @override
   Widget build(BuildContext context) {
     @override
     void getsebha() {
@@ -40,7 +43,7 @@ class Sebhatabastate extends State<SebhaTab> {
 
     return Scaffold(
       body: Column(children: [
-        Container(
+        SizedBox(
           width: 520,
           child: Stack(
             children: [
@@ -50,7 +53,9 @@ class Sebhatabastate extends State<SebhaTab> {
                 child: Transform.rotate(
                   angle: 0,
                   child: Container(
-                      child: Image.asset("assets/imgs/head_sebha_logo.png")),
+                      child: Image.asset(isDark
+                          ? "assets/imgs/head_sebha_logo.png"
+                          : "assets/imgs/head_sebha_dark.png")),
                 ),
               ),
               Positioned(
@@ -62,8 +67,9 @@ class Sebhatabastate extends State<SebhaTab> {
                       Transform.rotate(
                         angle: num,
                         child: Container(
-                            child:
-                                Image.asset("assets/imgs/body_sebha_logo.png")),
+                            child: Image.asset(isDark
+                                ? "assets/imgs/body_sebha_logo.png"
+                                : 'assets/imgs/body_sebha_dark.png')),
                       )
                     ])),
               )
@@ -73,14 +79,15 @@ class Sebhatabastate extends State<SebhaTab> {
         Container(
           child: Column(
             children: [
-              const Text("tasbeh counts",
+              Text("tasbeh counts",
                   style: TextStyle(
                     fontSize: 20,
+                    color: Theme.of(context).colorScheme.onSecondary,
                   )),
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
-                  color: const Color(0xffB7935F),
+                  color: Theme.of(context).colorScheme.primary,
                 ),
                 margin: const EdgeInsets.all(20),
                 height: 81,
@@ -88,7 +95,10 @@ class Sebhatabastate extends State<SebhaTab> {
                 child: Center(
                     child: Text(
                   "$sebhaCount",
-                  style: TextStyle(fontSize: 25),
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: Theme.of(context).colorScheme.onSecondary,
+                  ),
                 )),
               ),
               Container(

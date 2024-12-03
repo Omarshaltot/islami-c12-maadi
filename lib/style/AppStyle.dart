@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Appstyle {
-  static bool isDark = true;
+  static bool isDark = false;
   static Color lightprimaryColor = const Color(0xffB7935F);
   static Color darkprimaryColor = const Color(0xff141A2E);
   static Color darksecondaryColor = const Color(0xffFACC1D);

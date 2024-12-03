@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_c12_maadi/home/tabs/QuranSuraWidget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranTab extends StatelessWidget {
   List<String> suraNames = [
@@ -250,7 +251,7 @@ class QuranTab extends StatelessWidget {
           children: [
             Expanded(
                 child: Text(
-              "Sura Name",
+              AppLocalizations.of(context)!.suraName,
               style: Theme.of(context).textTheme.titleLarge,
               textAlign: TextAlign.center,
             )),
@@ -260,7 +261,7 @@ class QuranTab extends StatelessWidget {
               width: 3,
             ),
             Expanded(
-                child: Text("Verses Number",
+                child: Text(AppLocalizations.of(context)!.versesNumber,
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.titleLarge))
           ],

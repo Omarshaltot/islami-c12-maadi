@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:islami_c12_maadi/home/tabs/languageButtonsheet.dart';
 import 'package:islami_c12_maadi/home/tabs/theme.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Setting extends StatelessWidget {
   const Setting({super.key});
@@ -17,7 +18,7 @@ class Setting extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10),
             child: Text(
-              "language",
+              AppLocalizations.of(context)!.language,
               style: Theme.of(context).textTheme.titleLarge,
             ),
           ),
@@ -51,7 +52,7 @@ class Setting extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(10),
             child: Text(
-              "Theme",
+              AppLocalizations.of(context)!.theme,
               style: Theme.of(context).textTheme.titleLarge,
             ),
           ),
@@ -68,7 +69,7 @@ class Setting extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  "Light",
+                  AppLocalizations.of(context)!.light,
                   style: Theme.of(context)
                       .textTheme
                       .titleLarge

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:islami_c12_maadi/home/tabs/tasbehBtn.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SebhaTab extends StatefulWidget {
   const SebhaTab({super.key});
@@ -18,29 +19,28 @@ class Sebhatabastate extends State<SebhaTab> {
 
   bool isDark = false; // Define the isDark variable
 
+  void getsebha() {
+    num++;
+    sebhaCount++;
+    if (sebhaCount == 33 && reading == "astaghfirullah") {
+      counts++;
+      sebhaCount = 0;
+      reading = "alhamdulillah";
+    }
+    if (sebhaCount == 33 && reading == "alhamdulillah") {
+      sebhaCount = 0;
+      reading = "subhanallah";
+    }
+    if (reading == "subhanallah" && sebhaCount == 33) {
+      reading = "astaghfirullah";
+      counts = 0;
+      sebhaCount = 0;
+    }
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
-    @override
-    void getsebha() {
-      num++;
-      sebhaCount++;
-      if (sebhaCount == 33 && reading == "astaghfirullah") {
-        counts++;
-        sebhaCount = 0;
-        reading = "alhamdulillah";
-      }
-      if (sebhaCount == 33 && reading == "alhamdulillah") {
-        sebhaCount = 0;
-        reading = "subhanallah";
-      }
-      if (reading == "subhanallah" && sebhaCount == 33) {
-        reading = "astaghfirullah";
-        counts = 0;
-        sebhaCount = 0;
-      }
-      setState(() {});
-    }
-
     return Scaffold(
       body: Column(children: [
         SizedBox(
@@ -79,7 +79,7 @@ class Sebhatabastate extends State<SebhaTab> {
         Container(
           child: Column(
             children: [
-              Text("tasbeh counts",
+              Text(AppLocalizations.of(context)!.tasbehcounts,
                   style: TextStyle(
                     fontSize: 20,
                     color: Theme.of(context).colorScheme.onSecondary,
